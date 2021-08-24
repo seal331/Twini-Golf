@@ -17,7 +17,7 @@ After installing the dev packages of SDL2 for your distribution, execute the fol
 ```
 mkdir build && cd build && cmake .. && make
 ```
-The compiled binary ``twini_golf`` is located in ``./build``. .
+The compiled binary ``twini_golf`` is located in ``./build``.
 ### Web
 Not supported on this branch, please use the original branch or a different fork.
 
