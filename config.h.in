@@ -1,0 +1,1 @@
+#define RESPATH "@CMAKE_INSTALL_PREFIX@"

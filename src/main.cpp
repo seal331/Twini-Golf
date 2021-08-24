@@ -10,6 +10,7 @@
 #include "Ball.h"	
 #include "Tile.h"
 #include "Hole.h"
+#include "config.h"
 
 bool init()
 {
@@ -27,35 +28,35 @@ bool SDLinit = init();
 
 RenderWindow window("Twini-Golf", 640, 480);
 
-SDL_Texture* ballTexture = window.loadTexture("res/gfx/ball.png");
-SDL_Texture* holeTexture = window.loadTexture("res/gfx/hole.png");
-SDL_Texture* pointTexture = window.loadTexture("res/gfx/point.png");
-SDL_Texture* tileDarkTexture32 = window.loadTexture("res/gfx/tile32_dark.png");
-SDL_Texture* tileDarkTexture64 = window.loadTexture("res/gfx/tile64_dark.png");
-SDL_Texture* tileLightTexture32 = window.loadTexture("res/gfx/tile32_light.png");
-SDL_Texture* tileLightTexture64 = window.loadTexture("res/gfx/tile64_light.png");
-SDL_Texture* ballShadowTexture = window.loadTexture("res/gfx/ball_shadow.png");
-SDL_Texture* bgTexture = window.loadTexture("res/gfx/bg.png");
-SDL_Texture* uiBgTexture = window.loadTexture("res/gfx/UI_bg.png");
-SDL_Texture* levelTextBgTexture = window.loadTexture("res/gfx/levelText_bg.png");
-SDL_Texture* powerMeterTexture_FG = window.loadTexture("res/gfx/powermeter_fg.png");
-SDL_Texture* powerMeterTexture_BG = window.loadTexture("res/gfx/powermeter_bg.png");
-SDL_Texture* powerMeterTexture_overlay = window.loadTexture("res/gfx/powermeter_overlay.png");
-SDL_Texture* logoTexture = window.loadTexture("res/gfx/logo.png");
-SDL_Texture* click2start = window.loadTexture("res/gfx/click2start.png");
-SDL_Texture* endscreenOverlayTexture = window.loadTexture("res/gfx/end.png");
-SDL_Texture* splashBgTexture = window.loadTexture("res/gfx/splashbg.png");
+SDL_Texture* ballTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/ball.png").c_str());
+SDL_Texture* holeTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/hole.png").c_str());
+SDL_Texture* pointTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/point.png").c_str());
+SDL_Texture* tileDarkTexture32 = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/tile32_dark.png").c_str());
+SDL_Texture* tileDarkTexture64 = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/tile64_dark.png").c_str());
+SDL_Texture* tileLightTexture32 = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/tile32_light.png").c_str());
+SDL_Texture* tileLightTexture64 = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/tile64_light.png").c_str());
+SDL_Texture* ballShadowTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/ball_shadow.png").c_str());
+SDL_Texture* bgTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/bg.png").c_str());
+SDL_Texture* uiBgTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/UI_bg.png").c_str());
+SDL_Texture* levelTextBgTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/levelText_bg.png").c_str());
+SDL_Texture* powerMeterTexture_FG = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/powermeter_fg.png").c_str());
+SDL_Texture* powerMeterTexture_BG = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/powermeter_bg.png").c_str());
+SDL_Texture* powerMeterTexture_overlay = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/powermeter_overlay.png").c_str());
+SDL_Texture* logoTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/logo.png").c_str());
+SDL_Texture* click2start = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/click2start.png").c_str());
+SDL_Texture* endscreenOverlayTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/end.png").c_str());
+SDL_Texture* splashBgTexture = window.loadTexture((std::string(RESPATH) + "/share/twinigolf/res/gfx/splashbg.png").c_str());
 
-Mix_Chunk* chargeSfx = Mix_LoadWAV("res/sfx/charge.mp3");
-Mix_Chunk* swingSfx = Mix_LoadWAV("res/sfx/swing.mp3");
-Mix_Chunk* holeSfx = Mix_LoadWAV("res/sfx/hole.mp3");
+Mix_Chunk* chargeSfx = Mix_LoadWAV((std::string(RESPATH) + "/share/twinigolf/res/sfx/charge.mp3").c_str());
+Mix_Chunk* swingSfx = Mix_LoadWAV((std::string(RESPATH) + "/share/twinigolf/res/sfx/swing.mp3").c_str());
+Mix_Chunk* holeSfx = Mix_LoadWAV((std::string(RESPATH) + "/share/twinigolf/res/sfx/hole.mp3").c_str());
 
 
 SDL_Color white = { 255, 255, 255 };
 SDL_Color black = { 0, 0, 0 };
-TTF_Font* font32 = TTF_OpenFont("res/font/font.ttf", 32);
-TTF_Font* font48 = TTF_OpenFont("res/font/font.ttf", 48);
-TTF_Font* font24 = TTF_OpenFont("res/font/font.ttf", 24);
+TTF_Font* font32 = TTF_OpenFont((std::string(RESPATH) + "/share/twinigolf/res/font/font.ttf").c_str(), 32);
+TTF_Font* font48 = TTF_OpenFont((std::string(RESPATH) + "/share/twinigolf/res/font/font.ttf").c_str(), 48);
+TTF_Font* font24 = TTF_OpenFont((std::string(RESPATH) + "/share/twinigolf/res/font/font.ttf").c_str(), 24);
 
 Ball balls[2] = {Ball(Vector2f(0, 0), ballTexture, pointTexture, powerMeterTexture_FG, powerMeterTexture_BG, 0), Ball(Vector2f(0, 0), ballTexture, pointTexture, powerMeterTexture_FG, powerMeterTexture_BG, 1)};
 std::vector<Hole> holes = {Hole(Vector2f(0, 0), holeTexture), Hole(Vector2f(0, 0), holeTexture)};
